@@ -11,6 +11,7 @@ import sys
 def operationFill(url,key,translation):
     option = webdriver.ChromeOptions()
     option.add_argument("user-data-dir=C:/Users/neil.zhu/Selenium_Data")    # 浏览器路径,保存浏览器缓存登录transify
+    option.add_experimental_option('excludeSwitches', ['enable-logging'])
     # option.add_experimental_option("detach",True)
     driver = webdriver.Chrome(ChromeDriverManager().install(),options=option)  
     driver.get(url)
@@ -37,7 +38,7 @@ def main(url,path):
     count = 1
     for i in a: 
        operationFill(url,i[0],i[1])
-       print(count)
+       print('已成功修改',str(count),'个翻译')
        count=count+1
 
 if __name__ == '__main__':
@@ -48,8 +49,7 @@ if __name__ == '__main__':
     print(url)
     # url= "https://transify.sea.com/resources/97/lang/34"
     # url = sys.argv[0]
-    # file_path = sys.argv[1]
-    file_path = 'C:/Users/neil.zhu/1.xlsx'  # transify路径，格式 key+翻译
+    file_path = str(sys.argv[2])  # transify路径，格式 key+翻译
     main(url,file_path)
 
 
