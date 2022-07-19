@@ -8,6 +8,13 @@ from webdriver_manager.chrome import ChromeDriverManager
 import pandas as pd
 import sys
 
+# Read me:
+# sample call: python autoTransify.py 97 C:/Users/neil.zhu/1.xlsx
+# 脚本 + transify project code + 翻译文件路径
+# need to install python + selenium + webdriver_manager + chrome driver + pandas
+
+
+
 def operationFill(url,key,translation):
     option = webdriver.ChromeOptions()
     option.add_argument("user-data-dir=C:/Users/neil.zhu/Selenium_Data")    # 浏览器路径,保存浏览器缓存登录transify
