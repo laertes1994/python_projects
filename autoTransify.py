@@ -17,7 +17,7 @@ import sys
 
 def operationFill(url,key,translation):
     option = webdriver.ChromeOptions()
-    option.add_argument("user-data-dir=C:/Users/neil.zhu/Selenium_Data")    # 浏览器路径,保存浏览器缓存登录transify
+    option.add_argument("user-data-dir=C:/Users/neil.zhu/AppData/Local/Google/Chrome/User Data")    # 浏览器路径,保存浏览器缓存登录transify
     option.add_experimental_option('excludeSwitches', ['enable-logging'])
     # option.add_experimental_option("detach",True)
     driver = webdriver.Chrome(ChromeDriverManager().install(),options=option)  
