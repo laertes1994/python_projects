@@ -7,12 +7,21 @@ from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 import pandas as pd
 import sys
+import os
 
 # Read me:
 # sample call: python autoTransify.py 97 C:/Users/neil.zhu/1.xlsx
 # 脚本 + transify project code + 翻译文件路径
-# need to install python + selenium + webdriver_manager + chrome driver + pandas
+# need to install python + selenium + webdriver_manager + chrome driver + pandas + openpyxl
 
+import os
+ 
+#需要安装的库
+libs = ["selenium","time","webdriver_manager","pandas","openpyxl"]
+ 
+#循环遍历安装
+for lib in libs:
+    os.system("pip install " + lib)
 
 
 def operationFill(url,key,translation):
