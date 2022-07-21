@@ -17,7 +17,7 @@ import os
 import os
  
 #需要安装的库
-libs = ["selenium","time","webdriver_manager","pandas","openpyxl"]
+libs = ["selenium","webdriver_manager","pandas","openpyxl"]
  
 #循环遍历安装
 for lib in libs:
