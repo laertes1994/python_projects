@@ -20,17 +20,19 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
-from webdriver_manager.chrome import ChromeDriverManager
+# from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
+
 import pandas as pd
 import sys
 
 
 def operationFill(url,key,translation):
-    option = webdriver.ChromeOptions()
-    option.add_argument("user-data-dir=C:/Users/neil.zhu/AppData/Local/Google/Chrome/User Data")    # 浏览器路径,保存浏览器缓存登录transify
+    option = webdriver.EdgeOptions()
+    option.add_argument("user-data-dir=C:/Users/neil.zhu/AppData/Local/Microsoft/Edge/User Data")    # 浏览器路径,保存浏览器缓存登录transify
     option.add_experimental_option('excludeSwitches', ['enable-logging'])
     # option.add_experimental_option("detach",True)
-    driver = webdriver.Chrome(ChromeDriverManager().install(),options=option)  
+    driver = webdriver.Edge(EdgeChromiumDriverManager().install(),options=option)  
     driver.get(url)
     # time.sleep(8)
     driver.implicitly_wait(10)
