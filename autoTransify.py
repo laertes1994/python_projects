@@ -63,8 +63,8 @@ def operationFill(url,key,translation):
         elementsave.click()
         time.sleep(3)
         result = elementkey.get_attribute('value')
-        
-    print('已成功更新 '+ key +' '+ translation)
+
+    print('已成功更新 '+ key +' '+ result)
 
 def read_excel_list(path_file_name):
     excel_data = pd.read_excel(path_file_name,engine='openpyxl')
