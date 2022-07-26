@@ -50,7 +50,7 @@ def operationFill(driver,url,key,translation):
         time.sleep(1)
         elementsave = driver.find_element(By.CLASS_NAME,'large')
         elementsave.click()
-        time.sleep(2)
+        time.sleep(1)
         result = elementkey.get_attribute('value')
     print('已成功更新 '+ key +' '+ result)
 
