@@ -86,5 +86,3 @@ if __name__ == '__main__':
     # url = sys.argv[0]
     file_path = str(sys.argv[2])  # transify路径，格式 key+翻译
     main(url,file_path)
-
-)
