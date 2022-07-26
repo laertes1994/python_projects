@@ -40,13 +40,31 @@ def operationFill(url,key,translation):
     elemsearch.send_keys(key)
     time.sleep(3)
     elementkey = driver.find_element(By.CSS_SELECTOR,'textarea')
-    elementkey.click()
-    elementkey.clear()
-    elementkey.send_keys(translation)
-    time.sleep(1)
-    elementsave = driver.find_element(By.CLASS_NAME,'large')
-    elementsave.click()
-    time.sleep(3)
+    # elementkey.click()
+    # time.sleep(1)
+    # elementkey.clear()
+    # time.sleep(1)
+    # elementkey.send_keys(translation)
+    # time.sleep(1)
+    # elementsave = driver.find_element(By.CLASS_NAME,'large')
+    # elementsave.click()
+    # time.sleep(3)
+
+    result = elementkey.get_attribute('value')
+
+    while result != translation:
+        elementkey.click()
+        time.sleep(1)
+        elementkey.clear()
+        time.sleep(1)
+        elementkey.send_keys(translation)
+        time.sleep(1)
+        elementsave = driver.find_element(By.CLASS_NAME,'large')
+        elementsave.click()
+        time.sleep(3)
+        result = elementkey.get_attribute('value')
+        
+    print('已成功更新 '+ key +' '+ translation)
 
 def read_excel_list(path_file_name):
     excel_data = pd.read_excel(path_file_name,engine='openpyxl')
@@ -58,7 +76,7 @@ def main(url,path):
     count = 1
     for i in a: 
        operationFill(url,i[0],i[1])
-       print('已成功修改',str(count),'个翻译')
+       print('已成功更新',str(count),'个翻译')
        count=count+1
 
 if __name__ == '__main__':
