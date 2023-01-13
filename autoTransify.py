@@ -10,7 +10,7 @@ libs = ["selenium","webdriver_manager","pandas","openpyxl"]
  
 #循环遍历安装
 for lib in libs:
-    os.system("pip install " + lib)
+    os.system("pip3 install " + lib)
 
 
 from optparse import Option
