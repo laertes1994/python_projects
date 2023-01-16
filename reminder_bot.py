@@ -2,7 +2,7 @@ import httpx
 import base64
 
 BOT_WEBHOOK_URL = "https://openapi.seatalk.io/webhook/group/pYVw2pyfSyiJQTUhb_R1BA"
-with open("example.gif", "rb") as f:
+with open("/Users/neil.zhu/Git_Repo/python_projects/reminder_bot.py", "rb") as f:
    raw_image_content: bytes = f.read()
    base64_encoded_image: str = base64.b64encode(raw_image_content).decode("latin-1")
 
