@@ -1,7 +1,7 @@
 import time
 import pandas as pd
 from selenium import webdriver
-from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoSuchElementExceptionc
 from selenium.webdriver.common.by import By
 from selenium.webdriver import ActionChains
 from bs4 import BeautifulSoup
