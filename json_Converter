@@ -1,0 +1,12 @@
+import pandas as pd
+import json
+
+# Load Excel file
+xlsx_file = pd.read_excel('/Users/neil.zhu/Git_Repo/python_projects/transify1.xlsx', header=None)
+
+# Convert to JSON
+json_dict = dict(zip(xlsx_file[0], xlsx_file[1]))
+
+# Write to file
+with open('/Users/neil.zhu/Git_Repo/python_projects/transify1.json', 'w') as f:
+    json.dump(json_dict, f, ensure_ascii=False)
